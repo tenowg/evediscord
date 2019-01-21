@@ -22,7 +22,7 @@ class CreateDiscordAuth0UsersTable extends Migration
             $table->string('refresh_token');
             $table->integer('expires');
             $table->json('scopes');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();
         });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace discord\models;
 
 use Illuminate\Database\Eloquent\Model;
 

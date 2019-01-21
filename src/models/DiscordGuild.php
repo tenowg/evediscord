@@ -18,4 +18,7 @@ class DiscordGuild extends Model
         'owner',
         'permissions'
     ];
+
+    public $incrementing = false;
+    protected $primaryKey = 'id';
 }

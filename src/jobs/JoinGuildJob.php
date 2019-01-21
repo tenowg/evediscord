@@ -7,6 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use discord\services\DiscordGuildService;
 
 class JoinGuildJob implements ShouldQueue
 {
@@ -18,7 +19,7 @@ class JoinGuildJob implements ShouldQueue
     public $user;
 
     /**
-     * @var DiscordGuild
+     * @var int
      */
     public $guild;
 
@@ -27,7 +28,7 @@ class JoinGuildJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(DiscordAuth0User $user, DiscordGuild $guild) {
+    public function __construct(DiscordAuth0User $user, $guild_id) {
         $this->user = $user;
         $this->guild = $guild;
     }
@@ -37,8 +38,8 @@ class JoinGuildJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(DiscordGuildService $service)
     {
-        //
+        $service->addGuildMember($this->guild, $this->user);
     }
 }
