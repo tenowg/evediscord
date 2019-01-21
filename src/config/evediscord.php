@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'permissions' => 1006816343,
-    'client_id' => '536796397215940619',
-    'client_secret' => 'X6evqfKZWIIDieIpena6ufVxmt__dZfy',
-    'end_point' => 'https://discordapp.com/api',
-    'token' => 'NTM2Nzk2Mzk3MjE1OTQwNjE5.DycMtw.wyJkwbVd8KcLKFYmp9q0oMUzlRE',
-    'useragent' => 'EveDiscord (n/a, 0.0.1)'
+    'permissions' => env('DISCORD_PERMISSIONS', 1006816343),
+    'client_id' => env('DISCORD_CLIENT_ID'),
+    'client_secret' => env('DISCORD_SECRET'),
+    'end_point' => env('DISCORD_API_ENDPOINT', 'https://discordapp.com/api'),
+    'token' => env('DISCORD_BOT_TOKEN'),
+    'useragent' => env('DISCORD_USER_AGENT', 'EveDiscord (n/a, 0.0.1)')
 ];
