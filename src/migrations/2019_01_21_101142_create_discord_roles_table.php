@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDiscordSettingsTable extends Migration
+class CreateDiscordRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDiscordSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_settings', function (Blueprint $table) {
+        Schema::create('discord_roles', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateDiscordSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('discord_settings');
+        Schema::dropIfExists('discord_roles');
     }
 }

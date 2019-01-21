@@ -17,6 +17,7 @@ class EveDiscordProvider extends ServiceProvider
             __DIR__."/config/evediscord.php" => config_path('evediscord.php'),
         ]);
         $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
     }
 
     /**

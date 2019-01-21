@@ -6,5 +6,12 @@ return [
     'client_secret' => env('DISCORD_SECRET'),
     'end_point' => env('DISCORD_API_ENDPOINT', 'https://discordapp.com/api'),
     'token' => env('DISCORD_BOT_TOKEN'),
-    'useragent' => env('DISCORD_USER_AGENT', 'EveDiscord (n/a, 0.0.1)')
+    'useragent' => env('DISCORD_USER_AGENT', 'EveDiscord (n/a, 0.0.1)'),
+    'guild' => env('DISCORD_GUILD_ID'),
+    'scopes' => [
+        'identify',
+        'email',
+        'guilds',
+        'guilds.join'
+    ]
 ];

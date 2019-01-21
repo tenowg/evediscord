@@ -5,7 +5,7 @@ namespace discord\models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * discord\models\DiscordUser
+ * discord\models\DiscordAuth0User
  *
  * @mixin \Eloquent
  */
