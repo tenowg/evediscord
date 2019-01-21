@@ -1,0 +1,26 @@
+{
+    "name": "tenowg/discord",
+    "description": "Eve Discord",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Russell",
+            "email": "tenowg@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "src/",
+            "src/data"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "tenowg\\discord\\EveDiscordProvider"
+            ]
+        }
+    }
+}
