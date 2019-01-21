@@ -12,10 +12,12 @@
     "require": {},
     "autoload": {
         "classmap": [
-            "src/",
-            "src/data"
-        ]
-    },
+            "src/"
+        ],
+        "psr-4": {
+                "tenowg\\discord\\": "src/"
+            }
+        },
     "extra": {
         "laravel": {
             "providers": [
