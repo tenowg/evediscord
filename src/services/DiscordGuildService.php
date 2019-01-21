@@ -23,12 +23,10 @@ class DiscordGuildService {
     }
 
     public function addGuildMember($guild, DiscordAuth0User $user) {
-        //$user = DiscordAuth0User::find($user_id);
-        //if ($user) {
-        $uri = sprintf('guilds/%s/members/$s', $guild, $user->user_id);
-        dd($uri);
-        $this->api->callAPI($uri, $user, 'PUT');
-        //}
+        $uri = sprintf('guilds/%s/members/%s', $guild, $user->user_id);
+        $body = new \stdClass();
+        $body->access_token = $user->access_token;
+        $this->api->callAPIBot($uri, 'PUT', [], $body);
     }
 
     public function removeGuildMember($guild_id, $user_id) {

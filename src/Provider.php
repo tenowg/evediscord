@@ -77,7 +77,7 @@ class Provider extends AbstractProvider implements ProviderInterface
                 'access_token' => $user->token, 
                 'refresh_token' => $user->refreshToken == null ? '' : $user->refreshToken,
                 'expires' => $user->expiresIn,
-                'scopes' => explode(' ', $user->user['Scopes']),
+                'scopes' => explode(' ', $user->accessTokenResponseBody['scope']),
                 'avatar' => $user->avatar,
                 'email' => $user->email
             ]
