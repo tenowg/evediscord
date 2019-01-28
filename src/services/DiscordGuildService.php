@@ -48,4 +48,9 @@ class DiscordGuildService {
     public function removeRoleFromMember($guild_member, $role_id) {
 
     }
+
+    public function getGuildRoles($guild_id) {
+        $uri = sprintf('guilds/%s/roles', $guild_id);
+        return $this->api->callAPIBot($uri, 'GET', []);
+    }
 }

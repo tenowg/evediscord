@@ -14,8 +14,17 @@ class CreateDiscordRolesTable extends Migration
     public function up()
     {
         Schema::create('discord_roles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigInteger('id');
+            $table->string('name');
+            $table->integer('color');
+            $table->boolean('hoist');
+            $table->integer('position');
+            $table->integer('permissions');
+            $table->boolean('managed');
+            $table->boolean('mentionable');
             $table->timestamps();
+
+            $table->primary('id');
         });
     }
 
