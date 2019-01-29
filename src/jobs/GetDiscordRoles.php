@@ -35,22 +35,22 @@ class GetDiscordRoles implements ShouldQueue
         $roles = $service->getGuildRoles($this->guild_id);
 
         foreach($roles as $role) {
-            DiscordRole::updateOrCreate(['id' => $role->id], $role);
+            DiscordRole::updateOrCreate(['id' => $role['id']], $role);
         }
 
         $current_roles = DiscordRole::all()->toArray();
 
-        $diff = $this->diff($current_roles, $roles);
+        $diff = array_udiff($current_roles, $roles, [$this, 'diff']);
 
         foreach($diff as $remove) {
             DiscordRole::destroy($remove['id']);
         }
     }
 
-    private function diff(GuildRole $a, $b) {
+    protected function diff($a, $b) {
         if ($a['id'] == $b['id']) {
             return 0;
         }
-        return 1;
+        return ($a['id']>$b['id'])?1:-1;;
     }
 }
