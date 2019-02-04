@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'permissions' => env('DISCORD_PERMISSIONS', 1006816343),
+    'permissions' => env('DISCORD_PERMISSIONS', 1006830599),
     'client_id' => env('DISCORD_CLIENT_ID'),
     'client_secret' => env('DISCORD_SECRET'),
     'end_point' => env('DISCORD_API_ENDPOINT', 'https://discordapp.com/api'),
